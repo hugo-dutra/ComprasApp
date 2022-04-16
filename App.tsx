@@ -9,21 +9,22 @@ const { Navigator, Screen } = createNativeStackNavigator();
 
 const App: React.FC = (props) => {
   return (
-    <NavigationContainer>
-      <Navigator
-        screenOptions={{
-          headerShown: false
-        }}
-      >
-        <Screen name='LoginScreen' >
-          {props => <LoginScreen {...props}></LoginScreen>}
-        </Screen>
-        <Screen name="MainScreen">
-          {props => <MainScreen {...props}></MainScreen>}
-        </Screen>
-      </Navigator>
-
-    </NavigationContainer>
+    <View style={{ flex: 1 }}>
+      <NavigationContainer>
+        <Navigator
+          screenOptions={{
+            headerShown: false
+          }}
+        >
+          <Screen name='LoginScreen' >
+            {props => <LoginScreen {...props}></LoginScreen>}
+          </Screen>
+          <Screen name="MainScreen">
+            {props => <MainScreen {...props}></MainScreen>}
+          </Screen>
+        </Navigator>
+      </NavigationContainer>
+    </View>
   );
 }
 
@@ -37,3 +38,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
+{/* <NavigationContainer>
+<Navigator
+  screenOptions={{
+    headerShown: false
+  }}
+>
+  <Screen name='LoginScreen' >
+    {props => <LoginScreen {...props}></LoginScreen>}
+  </Screen>
+  <Screen name="MainScreen">
+    {props => <MainScreen {...props}></MainScreen>}
+  </Screen>
+</Navigator>
+
+</NavigationContainer> */}
