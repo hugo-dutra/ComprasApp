@@ -1,14 +1,15 @@
-import { ParamListBase, RouteProp } from '@react-navigation/native'
 import React from 'react'
-import { Button } from 'react-native'
-
+import { TouchableOpacity } from 'react-native'
+import { MaterialIcons } from '@expo/vector-icons'
+import GlobalStyles from '../themes/styles'
 
 const TabNavitatorHeader: React.FC<{ handleLoginNavigation: () => void }> = props => {
   return (
-    <>
-      <Button title='press here' onPress={() => props.handleLoginNavigation()} />
-    </>
+    <TouchableOpacity onPress={() => props.handleLoginNavigation()}  >
+      <MaterialIcons name="logout" size={25} style={GlobalStyles.Buttons} />
+    </TouchableOpacity>
   )
 }
+
 
 export default TabNavitatorHeader

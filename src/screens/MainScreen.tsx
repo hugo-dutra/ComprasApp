@@ -1,5 +1,5 @@
 import { NavigationContainer, ParamListBase, RouteProp } from '@react-navigation/native'
-import React from 'react'
+import React, { ReactNode, useEffect, useLayoutEffect } from 'react'
 import { View, Text, Dimensions } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ListaScreen from './ListaScreen';
@@ -7,8 +7,10 @@ import EstabelecimentoScreen from './EstabelecimentoScreen';
 import ComprasScreen from './ComprasScreen';
 import ProdutoScreen from './ProdutoScreen';
 import GraficoScreen from './GraficoScreen';
-import { Feather } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import TabNavitatorHeader from '../components/TabNavitatorHeader';
+import GlobalStyles from '../themes/styles';
+import { IconProps } from '@expo/vector-icons/build/createIconSet';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -16,41 +18,49 @@ const MainScreen: React.FC<{ route: RouteProp<ParamListBase, "MainScreen">, navi
   const handleLoginNavigation = () => {
     props.navigation.navigate("LoginScreen");
   }
+
+
   return (
     < View style={{ flex: 1, height: Dimensions.get("screen").height }} >
       <Navigator
         screenOptions={{
           headerShown: true,
-          headerRight: () => <TabNavitatorHeader handleLoginNavigation={() => handleLoginNavigation()} />,
-          title: ''
-        }}>
+          headerStyle: GlobalStyles.TabBarStyle,
+          headerRight: () => <TabNavitatorHeader handleLoginNavigation={handleLoginNavigation} />,
+          tabBarStyle: GlobalStyles.TabBarStyle,
+          tabBarShowLabel: true,
+          tabBarActiveTintColor: "#FFFFFF",
+          tabBarInactiveTintColor: "#FFFFFF",
+          tabBarActiveBackgroundColor: "#9B40BF",
+          tabBarInactiveBackgroundColor: "#313131"
+        }} >
         <Screen name='Lista' options={{
-          tabBarIcon: () => { return <Feather name="edit" size={25} color="#000" />; }
+          tabBarIcon: () => { return <MaterialIcons name="mode-edit" size={25} style={GlobalStyles.TabBarButtons} />; }
         }}>
           {props => <ListaScreen {...props}></ListaScreen>}
         </Screen>
 
         <Screen name='Estabelecimento' options={{
-          tabBarIcon: () => { return <Feather name="map-pin" size={25} color="#000" />; }
+          tabBarIcon: () => { return <MaterialIcons name="pin-drop" size={25} style={GlobalStyles.TabBarButtons} />; }
         }} >
           {props => <EstabelecimentoScreen {...props}></EstabelecimentoScreen>}
         </Screen>
 
         <Screen name='Compras' options={{
-          tabBarIcon: () => { return <Feather name="shopping-cart" size={25} color="#000" />; }
+          tabBarIcon: () => { return <MaterialIcons name="shopping-cart" size={25} style={GlobalStyles.TabBarButtons} />; }
         }}
         >
           {props => <ComprasScreen {...props}></ComprasScreen>}
         </Screen >
 
         <Screen name='Produto' options={{
-          tabBarIcon: () => { return <Feather name="coffee" size={25} color="#000" />; }
+          tabBarIcon: () => { return <MaterialIcons name="cake" size={25} style={GlobalStyles.TabBarButtons} />; }
         }}>
           {props => <ProdutoScreen {...props}></ProdutoScreen>}
         </Screen>
 
         <Screen name='Grafico' options={{
-          tabBarIcon: () => { return <Feather name="pie-chart" size={25} color="#000" />; }
+          tabBarIcon: () => { return <MaterialIcons name="pie-chart" size={25} style={GlobalStyles.TabBarButtons} />; }
         }} >
           {props => <GraficoScreen {...props}></GraficoScreen>}
         </Screen>

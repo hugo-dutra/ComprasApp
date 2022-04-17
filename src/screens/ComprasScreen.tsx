@@ -1,11 +1,16 @@
 import { ParamListBase, RouteProp } from '@react-navigation/native'
 import React from 'react'
 import { Dimensions, Text, View } from 'react-native'
+import GlobalStyles from '../themes/styles'
 
 const ComprasScreen: React.FC<{ route: RouteProp<ParamListBase, "Compras">, navigation: any }> = props => {
   return (
-    <View style={{ backgroundColor: '#ff0000', height: Dimensions.get("screen").height }}>
-      <Text>ComprasScreen</Text>
+    <View style={GlobalStyles.ScreenContainer}>
+      <Text
+        style={GlobalStyles.ScreenContainer}
+      >
+        ComprasScreen
+      </Text>
     </View>
   )
 }

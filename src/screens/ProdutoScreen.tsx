@@ -1,18 +1,18 @@
-import { ParamListBase, RouteProp } from '@react-navigation/native'
 import React from 'react'
+import { ParamListBase, RouteProp } from '@react-navigation/native'
 import { Text, View } from 'react-native'
 import GlobalStyles from '../themes/styles'
 
-const ListaScreen: React.FC<{ route: RouteProp<ParamListBase, "Lista">, navigation: any }> = props => {
+const ProdutoScreen: React.FC<{ route: RouteProp<ParamListBase, "Produto">, navigation: any }> = props => {
   return (
     <View style={GlobalStyles.ScreenContainer}>
       <Text
         style={GlobalStyles.ScreenContainer}
       >
-        Lista Screen
+        Produto Screen
       </Text>
     </View>
   )
 }
 
-export default ListaScreen
+export default ProdutoScreen
