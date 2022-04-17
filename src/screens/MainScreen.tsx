@@ -8,16 +8,21 @@ import ComprasScreen from './ComprasScreen';
 import ProdutoScreen from './ProdutoScreen';
 import GraficoScreen from './GraficoScreen';
 import { Feather } from '@expo/vector-icons';
+import TabNavitatorHeader from '../components/TabNavitatorHeader';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const MainScreen: React.FC<{ route: RouteProp<ParamListBase, "MainScreen">, navigation: any }> = (props) => {
+  const handleLoginNavigation = () => {
+    props.navigation.navigate("LoginScreen");
+  }
   return (
     < View style={{ flex: 1, height: Dimensions.get("screen").height }} >
-      {/* <Text onPress={() => { props.navigation.navigate("LoginScreen") }}>MainScreen</Text> */}
       <Navigator
         screenOptions={{
-          headerShown: false
+          headerShown: true,
+          headerRight: () => <TabNavitatorHeader handleLoginNavigation={() => handleLoginNavigation()} />,
+          title: ''
         }}>
         <Screen name='Lista' options={{
           tabBarIcon: () => { return <Feather name="edit" size={25} color="#000" />; }
