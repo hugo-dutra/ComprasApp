@@ -1,3 +1,4 @@
+import { apiGet } from "../../services/API";
 import { IBasicCrudService } from "../IBasicCrudService";
 
 export class JsonService<T> implements IBasicCrudService<T>{
@@ -7,11 +8,13 @@ export class JsonService<T> implements IBasicCrudService<T>{
   }
   create(Object: T): Promise<T> {
     alert("Json create implementation");
+
     throw new Error("Method not implemented.");
   }
-  listAll(): Promise<T>[] {
-    alert("Json  listAllimplementation");
-    throw new Error("Method not implemented.");
+  listAll(): Promise<T[]> {
+    return new Promise<T[]>((resolve, reject) => {
+      resolve(apiGet(this.baseCollection))
+    })
   }
   update(id: number): Promise<T> {
     alert("Json update implementation");

@@ -8,7 +8,7 @@ import ComprasScreen from './ComprasScreen';
 import ProdutoScreen from './ProdutoScreen';
 import GraficoScreen from './GraficoScreen';
 import { MaterialIcons } from '@expo/vector-icons';
-import TabNavitatorHeader from '../components/TabNavitatorHeader';
+import TabNavitatorHeader from '../components/TabNavigatorHeader/TabNavitatorHeader';
 import GlobalStyles from '../themes/styles';
 import { IconProps } from '@expo/vector-icons/build/createIconSet';
 

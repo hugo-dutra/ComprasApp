@@ -1,0 +1,3 @@
+export enum ENVIRONMENTS {
+  DEV, HOMOLOG, PRODUCTION
+}

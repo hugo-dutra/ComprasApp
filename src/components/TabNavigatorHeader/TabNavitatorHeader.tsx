@@ -1,7 +1,7 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
-import GlobalStyles from '../themes/styles'
+import GlobalStyles from '../../themes/styles'
 
 const TabNavitatorHeader: React.FC<{ handleLoginNavigation: () => void }> = props => {
   return (

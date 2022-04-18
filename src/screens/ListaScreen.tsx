@@ -1,7 +1,8 @@
 import { ParamListBase, RouteProp } from '@react-navigation/native'
 import React, { useEffect, useState } from 'react'
 import { Text, View } from 'react-native'
-import { DATA_COLLECTIONS } from '../constants/collections'
+import { DATA_COLLECTIONS } from '../constants/enums/collections'
+import { FirebaseService } from '../interfaces/impl/FirebaseService'
 import { JsonService } from '../interfaces/impl/JsonService'
 import { Lista } from '../models/Lista.model'
 import CrudService from '../services/CrudService'
@@ -16,7 +17,7 @@ const ListaScreen: React.FC<{ route: RouteProp<ParamListBase, "Lista">, navigati
   }, [])
 
   const recuperaLista = async () => {
-    const listaProdutos = await JSON.parse((crudService.getInstance().listAll()).toString()) as Lista[];
+    const listaProdutos = await crudService.getInstance().listAll() as Lista[]
     setLista([...listaProdutos]);
     console.clear();
     console.log(listaProdutos);
