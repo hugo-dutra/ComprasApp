@@ -1,8 +1,8 @@
 import { ParamListBase, RouteProp } from '@react-navigation/native'
 import React, { useEffect, useState } from 'react'
 import { Text, View } from 'react-native'
+import Listas from '../components/Listas/Listas'
 import { DATA_COLLECTIONS } from '../constants/enums/collections'
-import { FirebaseService } from '../interfaces/impl/FirebaseService'
 import { JsonService } from '../interfaces/impl/JsonService'
 import { Lista } from '../models/Lista.model'
 import CrudService from '../services/CrudService'
@@ -23,13 +23,15 @@ const ListaScreen: React.FC<{ route: RouteProp<ParamListBase, "Lista">, navigati
     console.log(listaProdutos);
   }
 
+  const handleItemTouched = (params: any[]) => {
+    alert(params[0] + " Item touched");
+  }
+
 
   return (
     <View style={GlobalStyles.ScreenContainer}>
-      <Text
-        style={GlobalStyles.ScreenContainer}
-      >
-
+      <Text style={GlobalStyles.ScreenContainer}>
+        <Listas items={lista} itemListEvent={handleItemTouched} />
       </Text>
     </View>
   )

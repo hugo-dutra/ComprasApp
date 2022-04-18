@@ -13,7 +13,8 @@ export class JsonService<T> implements IBasicCrudService<T>{
   }
   listAll(): Promise<T[]> {
     return new Promise<T[]>((resolve, reject) => {
-      resolve(apiGet(this.baseCollection))
+      const response = apiGet(this.baseCollection)
+      resolve(response);
     })
   }
   update(id: number): Promise<T> {
