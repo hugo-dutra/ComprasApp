@@ -9,7 +9,7 @@ const LoginScreen: React.FC<{ route: RouteProp<ParamListBase, "Login">, navigati
       <Text style={GlobalStyles.ScreenContainer}
         onPress={() => props.navigation.navigate("MainScreen")}
       >
-        LoginScreen
+        Logar
       </Text>
     </View>
 

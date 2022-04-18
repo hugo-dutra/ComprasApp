@@ -9,7 +9,7 @@ const GraficoScreen: React.FC<{ route: RouteProp<ParamListBase, "Grafico">, navi
       <Text
         style={GlobalStyles.ScreenContainer}
       >
-        GraficoScreen
+
       </Text>
     </View>
   )

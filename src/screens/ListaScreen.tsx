@@ -9,7 +9,7 @@ const ListaScreen: React.FC<{ route: RouteProp<ParamListBase, "Lista">, navigati
       <Text
         style={GlobalStyles.ScreenContainer}
       >
-        Lista Screen
+
       </Text>
     </View>
   )

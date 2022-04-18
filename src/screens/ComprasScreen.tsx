@@ -9,7 +9,7 @@ const ComprasScreen: React.FC<{ route: RouteProp<ParamListBase, "Compras">, navi
       <Text
         style={GlobalStyles.ScreenContainer}
       >
-        ComprasScreen
+
       </Text>
     </View>
   )

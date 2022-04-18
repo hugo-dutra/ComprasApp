@@ -9,7 +9,7 @@ const ProdutoScreen: React.FC<{ route: RouteProp<ParamListBase, "Produto">, navi
       <Text
         style={GlobalStyles.ScreenContainer}
       >
-        Produto Screen
+
       </Text>
     </View>
   )

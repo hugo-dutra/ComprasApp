@@ -9,7 +9,7 @@ const EstabelecimentoScreen: React.FC<{ route: RouteProp<ParamListBase, "Estabel
       <Text
         style={GlobalStyles.ScreenContainer}
       >
-        EstabelecimentoScreen
+
       </Text>
     </View>
   )

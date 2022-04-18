@@ -29,6 +29,7 @@ const MainScreen: React.FC<{ route: RouteProp<ParamListBase, "MainScreen">, navi
           headerRight: () => <TabNavitatorHeader handleLoginNavigation={handleLoginNavigation} />,
           tabBarStyle: GlobalStyles.TabBarStyle,
           tabBarShowLabel: true,
+          headerTitle: '',
           tabBarActiveTintColor: "#FFFFFF",
           tabBarInactiveTintColor: "#FFFFFF",
           tabBarActiveBackgroundColor: "#9B40BF",
