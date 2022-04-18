@@ -9,7 +9,7 @@ export class MongoService<T> implements IBasicCrudService<T>{
     alert("Mongo create implementation");
     throw new Error("Method not implemented.");
   }
-  listAll(): Promise<T>[] {
+  listAll(): Promise<T[]> {
     alert("Mongo  listAllimplementation");
     throw new Error("Method not implemented.");
   }

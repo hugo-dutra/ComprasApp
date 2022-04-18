@@ -5,6 +5,7 @@ const GlobalStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#1A1A1A",
     color: "#ffffff"
+
   },
   TabBarButtons: {
     color: "#ffffff",

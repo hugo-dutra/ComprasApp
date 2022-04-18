@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "br.hugodutra.comprasapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"

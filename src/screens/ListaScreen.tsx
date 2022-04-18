@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Text, View } from 'react-native'
 import Listas from '../components/Listas/Listas'
 import { DATA_COLLECTIONS } from '../constants/enums/collections'
+import { FirebaseService } from '../interfaces/impl/FirebaseService'
 import { JsonService } from '../interfaces/impl/JsonService'
 import { Lista } from '../models/Lista.model'
 import CrudService from '../services/CrudService'
@@ -18,9 +19,11 @@ const ListaScreen: React.FC<{ route: RouteProp<ParamListBase, "Lista">, navigati
 
   const recuperaLista = async () => {
     const listaProdutos = await crudService.getInstance().listAll() as Lista[]
-    setLista([...listaProdutos]);
     console.clear();
     console.log(listaProdutos);
+    /* setLista([...listaProdutos]);
+    console.clear();
+    console.log(listaProdutos); */
   }
 
   const handleItemTouched = (params: any[]) => {
