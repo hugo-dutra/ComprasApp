@@ -1,5 +1,6 @@
-import { Button, Text, TouchableOpacity, View } from "react-native"
+import { Button, Image, Text, TouchableOpacity, View } from "react-native"
 import { Lista } from '../../models/Lista.model'
+import { ListItemStyle } from "./ListItem.styles"
 
 export type ListItemPropType = {
   mainText?: string,
@@ -12,12 +13,19 @@ export type ListItemPropType = {
 
 export const ListItem: React.FC<{ item: ListItemPropType }> = (props) => {
   return (
-    <View>
-      <Text>{props.item.mainLabel} {props.item.mainText}</Text>
-      <Text>{props.item.secondLabel} {props.item.secondText}</Text>
-      <TouchableOpacity onPress={props.item.actionDispatch}>
-        <Text>TouchMe</Text>
-      </TouchableOpacity>
+    <View style={ListItemStyle.container}>
+      <View style={ListItemStyle.image}>
+        <Text>Img</Text>
+      </View>
+      <View style={ListItemStyle.text}>
+        <Text>{props.item.mainLabel} {props.item.mainText}</Text>
+        <Text>{props.item.secondLabel} {props.item.secondText}</Text>
+      </View>
+      <View style={ListItemStyle.button}>
+        <TouchableOpacity onPress={props.item.actionDispatch}>
+          <Text>TouchMe</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
