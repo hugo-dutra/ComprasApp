@@ -4,7 +4,8 @@ const GlobalStyles = StyleSheet.create({
   ScreenContainer: {
     flex: 1,
     backgroundColor: "#1A1A1A",
-    color: "#ffffff"
+    color: "#ffffff",
+    marginTop: 100
 
   },
   TabBarButtons: {

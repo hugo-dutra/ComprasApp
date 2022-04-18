@@ -10,7 +10,7 @@ import CrudService from '../services/CrudService'
 import GlobalStyles from '../themes/styles'
 
 const ListaScreen: React.FC<{ route: RouteProp<ParamListBase, "Lista">, navigation: any }> = props => {
-  const crudService = new CrudService(new JsonService<Lista>(DATA_COLLECTIONS.LISTAS), DATA_COLLECTIONS.LISTAS);
+  const crudService = new CrudService(new FirebaseService<Lista>(DATA_COLLECTIONS.LISTAS), DATA_COLLECTIONS.LISTAS);
   const [lista, setLista] = useState<Lista[]>([])
 
   useEffect(() => {
@@ -18,9 +18,8 @@ const ListaScreen: React.FC<{ route: RouteProp<ParamListBase, "Lista">, navigati
   }, [])
 
   const recuperaLista = async () => {
-    const listaProdutos = await crudService.getInstance().listAll() as Lista[]
-    console.clear();
-    console.log(listaProdutos);
+    const listaProdutos = await crudService.getInstance().listAll();// as Lista[]
+    alert(listaProdutos.length)
     /* setLista([...listaProdutos]);
     console.clear();
     console.log(listaProdutos); */

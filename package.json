@@ -15,6 +15,7 @@
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
     "@types/axios": "^0.14.0",
+    "@types/firebase": "^3.2.1",
     "@types/styled-components": "^5.1.25",
     "axios": "^0.26.1",
     "expo": "~44.0.0",
