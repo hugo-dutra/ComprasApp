@@ -19,10 +19,9 @@ const ListaScreen: React.FC<{ route: RouteProp<ParamListBase, "Lista">, navigati
 
   const recuperaLista = async () => {
     const listaProdutos = await crudService.getInstance().listAll();// as Lista[]
-    alert(listaProdutos.length)
-    /* setLista([...listaProdutos]);
+    //setLista([...listaProdutos]);
     console.clear();
-    console.log(listaProdutos); */
+    console.log(listaProdutos);
   }
 
   const handleItemTouched = (params: any[]) => {

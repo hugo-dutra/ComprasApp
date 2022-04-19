@@ -4,7 +4,6 @@ import { collection, DocumentData, getDocs, QuerySnapshot } from 'firebase/fires
 export class FirebaseService<T> implements IBasicCrudService<T> {
   baseCollection: string;
 
-
   constructor(baseCollection: string) {
     this.baseCollection = baseCollection;
   }
@@ -13,7 +12,7 @@ export class FirebaseService<T> implements IBasicCrudService<T> {
   }
   listAll(): Promise<T[]> {
     return new Promise<any>((resolve) => {
-      const snapshot = getDocs(collection(myFirestore, "usuarios"));
+      const snapshot = getDocs(collection(myFirestore, "/usuarios/YhzPxzLneqQ0TDZ4J61U/listas"));
       snapshot.then((value: QuerySnapshot<DocumentData>) => {
         resolve(value.docs.map((doc) => {
           const completeDocument = {
